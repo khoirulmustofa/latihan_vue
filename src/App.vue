@@ -17,6 +17,12 @@
   <input v-model="inputText" />
 
   <input type="text" :value="inputText" @input="inputText = $event.target.inputText" />
+  <!-- ================================== -->
+  <hr>
+  <h3>Conditional Rendering dengan v-if</h3>
+  <div v-if="status">This status TRUE</div>
+  <div v-else>This Status FALSE</div>
+  <button @click="changeStatus">Change Status</button>
 
 </template>
 <script>
@@ -27,12 +33,17 @@ export default {
       messege: 'Hallo Vue',
       tooltip: 'This Tooltip',
       count: 0,
-      inputText: ""
+      inputText: "",
+      status: false,
+      status2:true
     }
   },
   methods: {
     addDouble() {
       this.count = this.count + 5;
+    },
+    changeStatus(){
+      this.status= !this.status
     }
   }
 }
