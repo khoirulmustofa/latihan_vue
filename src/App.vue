@@ -24,6 +24,16 @@
   <div v-else>This Status FALSE</div>
   <button @click="changeStatus">Change Status</button>
 
+
+  <!-- ============================================== -->
+  <hr>
+  <h3>Looping dengan v-for</h3>
+  <ol>
+    <li v-for="(todo, index) in todos" key="todo.id">
+      {{ index }} - {{ todo.activity }}
+    </li>
+  </ol>
+
 </template>
 <script>
 
@@ -35,15 +45,20 @@ export default {
       count: 0,
       inputText: "",
       status: false,
-      status2:true
+      status2: true,
+      todos: [
+        { id: 1, activity: 'Menyapu' },
+        { id: 2, activity: 'Makan' },
+        { id: 3, activity: 'Minum' },
+      ]
     }
   },
   methods: {
     addDouble() {
       this.count = this.count + 5;
     },
-    changeStatus(){
-      this.status= !this.status
+    changeStatus() {
+      this.status = !this.status
     }
   }
 }
