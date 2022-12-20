@@ -34,8 +34,15 @@
     </li>
   </ol>
 
+
+  <!-- ============================================== -->
+  <hr>
+  <h3>Component Sederhana</h3>
+  <ChildComponent/>
 </template>
 <script>
+
+import ChildComponent from './components/ChildComponent.vue';
 
 export default {
   data() {
@@ -60,6 +67,9 @@ export default {
     changeStatus() {
       this.status = !this.status
     }
+  },
+  components:{
+    ChildComponent
   }
 }
   // name: 'App',
