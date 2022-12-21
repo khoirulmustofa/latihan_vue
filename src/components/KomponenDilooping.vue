@@ -1,10 +1,8 @@
 <template>
-    <div>Ini dari Child Component</div>
-    <div>{{ pesan }}</div>
+    <p>{{ pesan }}</p>
 </template>
 
 <script>
-
 export default {
     props:{
         pesan:{
@@ -12,5 +10,4 @@ export default {
             default: "",
         }
     }
-}
-</script>
+}</script>

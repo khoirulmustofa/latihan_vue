@@ -37,12 +37,28 @@
 
   <!-- ============================================== -->
   <hr>
-  <h3>Component Sederhana</h3>
-  <ChildComponent/>
+  <h3>7. Component Sederhana</h3>
+  <ChildComponent />
+
+
+  <!-- ============================================== -->
+  <hr>
+  <h3>8. Props pada Component</h3>
+  <p>Ini tulisan dari Parent</p>
+  <ChildComponent pesan="Ini Pesan Props dari Parent" />
+  <ChildComponent :pesan="messege" />
+
+
+  <!-- ============================================== -->
+  <hr>
+  <h3>9. Loop pada Component</h3>
+
+  <KomponenDilooping v-for="angka in angkas" key="todo.id" :pesan="angka" />
 </template>
 <script>
 
 import ChildComponent from './components/ChildComponent.vue';
+import KomponenDilooping from './components/KomponenDilooping.vue';
 
 export default {
   data() {
@@ -57,6 +73,9 @@ export default {
         { id: 1, activity: 'Menyapu' },
         { id: 2, activity: 'Makan' },
         { id: 3, activity: 'Minum' },
+      ],
+      angkas: [
+        'Satu', 'Dua', 'Tiga'
       ]
     }
   },
@@ -68,8 +87,9 @@ export default {
       this.status = !this.status
     }
   },
-  components:{
-    ChildComponent
+  components: {
+    ChildComponent,
+    KomponenDilooping
   }
 }
   // name: 'App',
